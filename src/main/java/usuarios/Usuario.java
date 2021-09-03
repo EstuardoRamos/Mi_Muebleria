@@ -4,6 +4,7 @@ package usuarios;
 
 public class Usuario {
 
+    private int id;
     private String nombre;
     private String password;
     private String tipoStr;
@@ -17,12 +18,31 @@ public class Usuario {
         this.password = password;
     }
 
-    public Usuario(String nombre, String password, String tipoStr, int tipoNum) {
+    public Usuario(int id, String nombre, String password, String tipoStr, int tipoNum) {
+        this.id = id;
         this.nombre = nombre;
         this.password = password;
         this.tipoStr = tipoStr;
         this.tipoNum = tipoNum;
     }
+
+    public Usuario(String nombre, String password, int tipoNum) {
+        this.nombre = nombre;
+        this.password = password;
+        this.tipoNum = tipoNum;
+    }
+    
+    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
 
     public String getNombre() {
         return nombre;

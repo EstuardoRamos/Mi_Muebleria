@@ -27,7 +27,7 @@
                         <a class="nav-link" href="ManejadorFabrica?menuFabrica=Piezas&accion=Listar" target="miContenedor">Muebles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Controlador?menu=Empleados&accion=Listar" target="miContenedor">Usuarios</a>
+                        <a class="nav-link" href="ManejadorAdmin?menu=Empleados&accion=Listar" target="miContenedor">Usuarios</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Controlador?menu=Clientes" target="miContenedor">Reportes</a>
