@@ -32,7 +32,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Precio</label>
-                                <input type="number" class="form-control" name="precio" step="any" value="${piezaSeleccionado.getPrecioPieza()}" required/ >
+                                <input type="number" class="form-control" name="precio" step="any" value="${piezaSeleccionado.getPrecioPieza()}" required/>
                             </div>
 
                             <input type="submit" class="btn btn-primary" name="accion" value="Agregar" >
@@ -59,9 +59,9 @@
                                 <td>${pieza.getNombrePieza()}</td>
                                 <td>${pieza.getPrecioPieza()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="ManejadorFabrica?menuFabrica=Piezas&accion=Cargar&id=${pieza.getId()}">Editar</a>
-                                    <a class="btn btn-danger" href="ManejadorFabrica?menuFabrica=Piezas&accion=Eliminar&id=${pieza.getId()}">Eliminar</a>
-                                    <a class="btn btn-danger" href="ManejadorFabrica?menuFabrica=Piezas&accion=sumar&nombrePieza=${pieza.getNombrePieza()}&precioPieza=${pieza.getPrecioPieza()}">+</a>
+                                    <a class="btn btn-warning" href="ManejadorFabr?menuFabrica=Piezas&accion=Cargar&id=${pieza.getId()}">Editar</a>
+                                    <a class="btn btn-danger" href="ManejadorFabr?menuFabrica=Piezas&accion=Eliminar&id=${pieza.getId()}">Eliminar</a>
+                                    <a class="btn btn-danger" href="ManejadorFabr?menuFabrica=Piezas&accion=sumar&nombrePieza=${pieza.getNombrePieza()}&precioPieza=${pieza.getPrecioPieza()}">+</a>
                                 </td>
 
                             </tr>

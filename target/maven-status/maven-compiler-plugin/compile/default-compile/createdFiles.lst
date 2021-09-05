@@ -1,0 +1,8 @@
+fabricaj/UsuarioFabrica.class
+fabricaj/ManejadorPieza.class
+fabricaj/ManejadorFabrica.class
+usuarios/BuscadorUsuarioServlet.class
+usuarios/Usuario.class
+conec/Conexion.class
+fabricaj/Pieza.class
+usuarios/ModificadorBaseServlet.class

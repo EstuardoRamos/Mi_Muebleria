@@ -16,17 +16,17 @@
             <div class="card col-md-4">
                 <div class="card-body">
                     <h5 class="card-title">Empleados</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">En este panel podras gestionar los datos de los usuarios empleados del sistema</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">En esta area podra ingresar a los usuarios de este sistema</h6>
                     <div>
                         <form action="ManejadorAdmin?menu=Empleados" method="POST">
                             
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input type="text" class="form-control" name="txtnombre" value="${usuarioSeleccionado.getNombre()}">
+                                <input type="text" class="form-control" name="txtnombre" value="${usuarioSeleccionado.getNombre()}" required/>
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
-                                <input type="text" class="form-control" name="txtpassword" value="${usuarioSeleccionado.getPassword()}">
+                                <input type="password" class="form-control" name="txtpassword" value="${usuarioSeleccionado.getPassword()}" required/>
                             </div>
                             <div class="form-group">
                                 <label>Tipo</label>
