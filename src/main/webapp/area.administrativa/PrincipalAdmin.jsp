@@ -24,7 +24,10 @@
                         <a class="nav-link">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ManejadorFabrica?menuFabrica=Piezas&accion=Listar" target="miContenedor">Muebles</a>
+                        <a class="nav-link" href="ManejadorAdmin?menu=Muebles&accion=Listar" target="miContenedor">Muebles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ManejadorAdmin?menu=piezasEnsamble&accion=Listar" target="miContenedor">Piezas ensamble</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="ManejadorAdmin?menu=Empleados&accion=Listar" target="miContenedor">Usuarios</a>

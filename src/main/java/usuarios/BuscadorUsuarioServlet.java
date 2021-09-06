@@ -19,16 +19,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import usuarios.Usuario;
+
 /**
  *
  * @author Estuardo Ramos
  */
 @WebServlet(name = "BuscadorUsuarioServlet", urlPatterns = {"/BuscadorUsuarioServlet"})
 public class BuscadorUsuarioServlet extends HttpServlet {
+
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
     Conexion cn = new Conexion();
+    Usuario usuario = new Usuario();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,9 +42,6 @@ public class BuscadorUsuarioServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
-
-    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -54,40 +54,36 @@ public class BuscadorUsuarioServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
 
         //processRequest(request, response);
-
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //processRequest(request, response);
-        Usuario usuario = new Usuario();
         String nombre = request.getParameter("nombre");
         String txtContra = request.getParameter("txtContra");
         String tipo = request.getParameter("tipo");
         int tipoInt = Integer.valueOf(tipo);
-        usuario.setNombre(nombre);
-        usuario.setPassword(txtContra);
-        usuario.setTipoNum(tipoInt);
-        
+
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         String tipoLetras = null;
         RequestDispatcher rd;
 
         try {
-            con = cn.Conexion(); 
-            ps = con.prepareStatement("SELECT * FROM Usuarios WHERE Nombre=? AND Contra=? AND Tipo=?");
+            con = cn.Conexion();
+            ps = con.prepareStatement("SELECT * FROM user WHERE Nombre=? AND Contra=? AND TipoInt=?");
             ps.setString(1, nombre);
             ps.setString(2, txtContra);
             ps.setString(3, tipo);
             rs = ps.executeQuery();
             if (rs.next()) {
-                out.print("Usuario Encontrado");
+                usuario.setId(rs.getInt("id"));
+                usuario.setNombre(rs.getString("Nombre"));
+                usuario.setPassword(rs.getString("Contra"));
+                usuario.setTipoNum(rs.getInt("TipoInt"));
+                usuario.setTipoStr(rs.getString("TipoStr"));
                 if (tipo.equals("1")) {
                     rd = request.getRequestDispatcher("fabrica/PrincipalFabr.jsp");
                     rd.forward(request, response);
@@ -102,7 +98,6 @@ public class BuscadorUsuarioServlet extends HttpServlet {
                     rd.forward(request, response);
                 }
             } else {
-                out.print("Usuario no encontrado");
                 String msjError = "Error los datos ingresados son incorrectos";
                 rd = request.getRequestDispatcher("Login-Inicio.jsp");
                 rd.forward(request, response);
@@ -126,13 +121,12 @@ public class BuscadorUsuarioServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
-    
-    public static void  buscarUsuario(boolean user, String tipo) throws ClassNotFoundException{
+
+    public static void buscarUsuario(boolean user, String tipo) throws ClassNotFoundException {
     }
-    
-    public void asignarPagina(){
-        
+
+    public void asignarPagina() {
+
     }
 
 }

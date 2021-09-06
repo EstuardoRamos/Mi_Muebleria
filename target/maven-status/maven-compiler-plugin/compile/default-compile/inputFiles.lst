@@ -1,7 +1,11 @@
+/home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/EnsamblePiezas.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/usuarios/ManejadorUsuario.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/area/finaciera/ManejadorAdmin.java
+/home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/MuebleVenta.java
+/home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/AdministradorMuebles.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/usuarios/BuscadorUsuarioServlet.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/area/ventas/PuntoVenta.java
+/home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/MuebleTMp.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/usuarios/Cliente.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/MuebleTipo.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/MuebleFr.java
@@ -15,5 +19,6 @@
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/usuarios/ModificadorBaseServlet.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/Mueble.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/ManejadorMuebleFr.java
+/home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/PiezaEnsamble.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/ManejadorPieza.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/conec/Conexion.java

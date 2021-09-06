@@ -7,25 +7,17 @@ package fabricaj;
  * @author Estuardo Ramos
  */
 public class Mueble {
-    
-    private int id;
     private String nombre;
-    private float precioCosto;
-    private float precioVenta;
+    private float precio;
 
-    public Mueble(int id, String nombre, float precioCosto, float precioVenta) {
-        this.id = id;
+    public Mueble() {
+    }
+
+    
+    
+    public Mueble(String nombre, float precio) {
         this.nombre = nombre;
-        this.precioCosto = precioCosto;
-        this.precioVenta = precioVenta;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+        this.precio = precio;
     }
 
     public String getNombre() {
@@ -36,21 +28,14 @@ public class Mueble {
         this.nombre = nombre;
     }
 
-    public float getPrecioCosto() {
-        return precioCosto;
+    public float getPrecio() {
+        return precio;
     }
 
-    public void setPrecioCosto(float precioCosto) {
-        this.precioCosto = precioCosto;
+    public void setPrecio(float precio) {
+        this.precio = precio;
     }
-
-    public float getPrecioVenta() {
-        return precioVenta;
-    }
-
-    public void setPrecioVenta(float precioVenta) {
-        this.precioVenta = precioVenta;
-    }
+    
     
     
 

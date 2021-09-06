@@ -19,7 +19,7 @@
                     <h6 class="card-subtitle mb-2 text-muted">En esta area podra ingresar a los usuarios de este sistema</h6>
                     <div>
                         <form action="ManejadorAdmin?menu=Empleados" method="POST">
-                            
+
                             <div class="form-group">
                                 <label>Nombre</label>
                                 <input type="text" class="form-control" name="txtnombre" value="${usuarioSeleccionado.getNombre()}" required/>
@@ -28,21 +28,16 @@
                                 <label>Password</label>
                                 <input type="password" class="form-control" name="txtpassword" value="${usuarioSeleccionado.getPassword()}" required/>
                             </div>
+                            
                             <div class="form-group">
                                 <label>Tipo</label>
                                 <select class="form-control form-control-sm" name="txttipo">
-                                    <option value="1">Fabrica</option>
+                                    <option value="1">Fabrica</option>         
                                     <option value="2">Punto de venta</option>
                                     <option value="3">Financiero</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Estado</label>
-                                <select class="form-control form-control-sm" name="txtestado">
-                                    <option>Activo</option>
-                                    <option>Inactivo</option>
-                                </select>
-                            </div>
+                            
 
                             <input type="submit" class="btn btn-primary" name="accion" value="Agregar" >
                             <input type="submit" class="btn btn-success" name="accion" value="Actualizar" >
@@ -57,9 +52,8 @@
                         <tr>
                             <th scope="col">id</th>
                             <th scope="col">Nombres</th>
-                            <th scope="col">Contraseña</th>
                             <th scope="col">Tipo</th>
-                            <th scope="col">Estado</th>
+                            <th scope="col">Tipo en numero</th>
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
@@ -69,11 +63,10 @@
                             <tr>
                                 <th scope="row">${usuario.getId()}</th>
                                 <td>${usuario.getNombre()}</td>
-                                <td>${usuario.getPassword()}</td>
                                 <td>${usuario.getTipoStr()}</td>
                                 <td>${usuario.getTipoNum()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="Controlador?menu=Empleados&accion=Cargar&id=${usuario.getId()}">Editar</a>
+                                    <a class="btn btn-warning" href="ManejadorAdmin?menu=Empleados&accion=Cargar&id=${usuario.getId()}">Editar</a>
                                     <a class="btn btn-danger" href="ManejadorAdmin?menu=Empleados&accion=Eliminar&id=${usuario.getId()}">Eliminar</a>
                                 </td>
 
@@ -86,6 +79,7 @@
             </div>
 
             <!-- Optional JavaScript -->
+
             <!-- jQuery first, then Popper.js, then Bootstrap JS -->
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
