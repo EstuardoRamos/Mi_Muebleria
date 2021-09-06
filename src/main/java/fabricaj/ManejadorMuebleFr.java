@@ -1,4 +1,3 @@
-
 package fabricaj;
 
 import conec.Conexion;
@@ -12,14 +11,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ManejadorMuebleFr {
-    
+
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
     Conexion cn = new Conexion();
     MuebleFr muebleFr = new MuebleFr();
-    
-    
+
     /*public void agregar(Pieza pieza) {
 
         String sentencia = "INSERT INTO PIEZA (nombre_pieza,precio_pieza) VALUES (?,?)";
@@ -33,7 +31,6 @@ public class ManejadorMuebleFr {
             Logger.getLogger(ManejadorPieza.class.getName()).log(Level.SEVERE, null, ex);
         }
     }*/
-    
     public List Listar() {
         String consulta = "SELECT * FROM tipo_mueble";
         List<MuebleFr> lista = new ArrayList();
@@ -52,13 +49,12 @@ public class ManejadorMuebleFr {
             }
         } catch (SQLException ex) {
             Logger.getLogger(ManejadorMuebleFr.class.getName()).log(Level.SEVERE, null, ex);
-            
+
         }
         return lista;
 
     }
-    
-    
+
     /*public void modificar(Pieza pieza) {
         String sentencia = "UPDATE PIEZA set nombre_pieza=?,precio_pieza=? WHERE id_pieza=?";
         try {
@@ -74,8 +70,7 @@ public class ManejadorMuebleFr {
         }
         
     }*/
-    
-   /* public Pieza ListarPorId(int id) {
+ /* public Pieza ListarPorId(int id) {
         MuebleFr muebleFr = new MuebleFr();
         Pieza pieza = new Pieza();
         String consulta = "SELECT * FROM PIEZA WHERE tipo_mueble=" + id;
@@ -107,12 +102,10 @@ public class ManejadorMuebleFr {
             Logger.getLogger(ManejadorMuebleFr.class.getName()).log(Level.SEVERE, null, ex);
         }
     }*/
-    
-    
     //consultar cantidad de piezas para el mueble
-    public List ConsultCantPiezas(String nombre){
-        System.out.println("hola "+nombre);
-        String consulta = "SELECT * FROM piezas_mueble";
+    public List ConsultCantPiezas(String nombre) {
+        System.out.println("hola " + nombre);
+        String consulta = "SELECT * FROM piezas_mueble WHERE tipo_mueble="+"'"+nombre+"'";
         List<MuebleTipo> lista1 = new ArrayList();
         //con = cn.Conexion();
         try {
@@ -133,7 +126,30 @@ public class ManejadorMuebleFr {
         }
         return lista1;
     }
-    
-    
+
+    public List ConsultCantDisp(String nombre) {
+        System.out.println("hola " + nombre);
+        String consulta = "SELECT nombre_pieza, COUNT( nombre_pieza ) AS total FROM  PIEZA GROUP BY nombre_pieza ORDER BY\n"
+                + "total DESC";
+        List<MuebleTipo> lista1 = new ArrayList();
+        //con = cn.Conexion();
+        try {
+            con = cn.Conexion();
+            ps = con.prepareStatement(consulta);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                MuebleTipo muebleT = new MuebleTipo();
+                muebleT.setNombrePieza(rs.getString("nombre_pieza"));
+               //muebleT.setNombreMT(rs.getString("tipo_mueble"));
+                muebleT.setCantidadPieza(rs.getInt("total"));
+                System.out.println(muebleT.getNombrePieza());
+                lista1.add(muebleT);
+                System.out.println("conected");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ManejadorMuebleFr.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lista1;
+    }
 
 }

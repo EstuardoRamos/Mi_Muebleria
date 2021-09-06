@@ -26,6 +26,13 @@ public class MuebleTipo {
         this.nombrePieza = nombrePieza;
         this.cantidadPieza = cantidadPieza;
     }
+    
+
+    public MuebleTipo(String nombreMT, int cantidadPieza) {
+        this.nombreMT = nombreMT;
+        this.cantidadPieza = cantidadPieza;
+    }
+    
 
     public String getNombreMT() {
         return nombreMT;

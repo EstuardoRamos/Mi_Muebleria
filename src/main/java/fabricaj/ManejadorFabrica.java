@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 public class ManejadorFabrica extends HttpServlet {
 
     ManejadorPieza manejadorPieza = new ManejadorPieza();
-    private int idPieza;
+    int idPieza;
     Pieza piezaG = new Pieza();
     ManejadorMuebleFr muebleF = new ManejadorMuebleFr();
 
@@ -39,7 +40,7 @@ public class ManejadorFabrica extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         String menu = request.getParameter("menuFabrica");
+        String menu = request.getParameter("menuFabrica");
         String accion = request.getParameter("accion");
 
         if (menu.equals("Piezas")) {
@@ -54,7 +55,7 @@ public class ManejadorFabrica extends HttpServlet {
                     request.getRequestDispatcher("ManejadorFabrica?menuFabrica=Piezas&accion=Listar").forward(request, response);
 
                     break;
-                
+
                 case "Listar":
                     List lista = manejadorPieza.Listar();
                     //List lista = ManejadorPieza.Listar();
@@ -82,7 +83,7 @@ public class ManejadorFabrica extends HttpServlet {
                     request.getRequestDispatcher("ManejadorFabrica?menuFabrica=Piezas&accion=Listar").forward(request, response);
 
                     break;
-                    
+
                 case "Eliminar":
 
                     idPieza = Integer.parseInt(request.getParameter("id"));
@@ -90,13 +91,12 @@ public class ManejadorFabrica extends HttpServlet {
                     request.getRequestDispatcher("ManejadorFabrica?menuFabrica=Piezas&accion=Listar").forward(request, response);
 
                     break;
-                    
-                    
-                    case "sumar":
+
+                case "sumar":
 
                     String nombreP = request.getParameter("nombrePieza");
-                        System.out.println(request.getParameter("precioPieza"));
-                        System.out.println(request.getParameter("nombrePieza"));
+                    System.out.println(request.getParameter("precioPieza"));
+                    System.out.println(request.getParameter("nombrePieza"));
                     float precioP = Float.parseFloat(request.getParameter("precioPieza"));
                     piezaG.setNombrePieza(nombreP);
                     piezaG.setPrecioPieza(precioP);
@@ -106,12 +106,17 @@ public class ManejadorFabrica extends HttpServlet {
                     break;
 
             }
-            request.getRequestDispatcher("fabrica/Pieza.jsp").forward(request, response);
+
+            RequestDispatcher rd = request.getRequestDispatcher("fabrica/Pieza.jsp");
+            try {
+                rd.forward(request, response);
+                return;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         }
-            //request.getRequestDispatcher("fabrica/Pieza.jsp").forward(request, response);
 
-         
         if (menu.equals("Ensamble")) {
             switch (accion) {
 
@@ -123,13 +128,21 @@ public class ManejadorFabrica extends HttpServlet {
                 case "Ensamblar":
                     String nombreMueble = request.getParameter("nombreMueble");
                     //Pieza pieza = manejadorPieza.ListarPorId(idPieza);
+                    System.out.println("hey "+nombreMueble);
+                    //List listaM = muebleF.ConsultCantDisp(nombreMueble);
                     List listaM = muebleF.ConsultCantPiezas(nombreMueble);
                     request.setAttribute("muebleT", listaM);
                     request.getRequestDispatcher("ManejadorFabrica?menuFabrica=Ensamble&accion=ListarP").forward(request, response);
 
                     break;
             }
-            request.getRequestDispatcher("fabrica/Ensamble.jsp").forward(request, response);
+            RequestDispatcher rd = request.getRequestDispatcher("fabrica/Ensamble.jsp");
+            try {
+                rd.forward(request, response);
+                return;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -146,7 +159,6 @@ public class ManejadorFabrica extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-
     }
 
     /**

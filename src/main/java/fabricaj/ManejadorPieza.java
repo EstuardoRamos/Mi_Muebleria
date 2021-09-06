@@ -22,10 +22,10 @@ public class ManejadorPieza {
     PreparedStatement ps;
     ResultSet rs;
     Conexion cn = new Conexion();
+    int r;
     
     
-    
-    public void agregar(Pieza pieza) {
+    public int agregar(Pieza pieza) {
 
         String sentencia = "INSERT INTO PIEZA (nombre_pieza,precio_pieza) VALUES (?,?)";
         try {
@@ -37,6 +37,7 @@ public class ManejadorPieza {
         } catch (SQLException ex) {
             Logger.getLogger(ManejadorPieza.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return r;
     }
     
     public List Listar() {
@@ -64,7 +65,7 @@ public class ManejadorPieza {
     }
     
     
-    public void modificar(Pieza pieza) {
+    public int modificar(Pieza pieza) {
         String sentencia = "UPDATE PIEZA set nombre_pieza=?,precio_pieza=? WHERE id_pieza=?";
         try {
             con = cn.Conexion();
@@ -77,7 +78,7 @@ public class ManejadorPieza {
         } catch (SQLException ex) {
             Logger.getLogger(ManejadorPieza.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+       return r; 
     }
     
     public Pieza ListarPorId(int id) {

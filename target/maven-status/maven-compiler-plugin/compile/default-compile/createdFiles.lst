@@ -1,5 +1,13 @@
+fabricaj/Mueble.class
 fabricaj/UsuarioFabrica.class
+fabricaj/MuebleTipo.class
+area/finaciera/ManejadorAdmin.class
+usuarios/Cliente.class
 fabricaj/ManejadorPieza.class
+fabricaj/ManejadorMuebleFr.class
+usuarios/ManejadorUsuario.class
+fabricaj/MuebleFr.class
+fabricaj/Ensamble.class
 fabricaj/ManejadorFabrica.class
 usuarios/BuscadorUsuarioServlet.class
 usuarios/Usuario.class

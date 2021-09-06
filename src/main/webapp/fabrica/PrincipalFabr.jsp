@@ -24,10 +24,10 @@
                         <a class="nav-link">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ManejadorFabr?menuFabrica=Piezas&accion=Listar" target="miContenedor">Piezas</a>
+                        <a class="nav-link" href="ManejadorFabrica?menuFabrica=Piezas&accion=Listar" target="miContenedor">Piezas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ManejadorFabr?menuFabrica=Ensamble&accion=ListarP" target="miContenedor">Ensamblar muebles</a>
+                        <a class="nav-link" href="ManejadorFabrica?menuFabrica=Ensamble&accion=ListarP" target="miContenedor">Ensamblar muebles</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Controlador?menu=Clientes" target="miContenedor">Informacion piezas</a>
