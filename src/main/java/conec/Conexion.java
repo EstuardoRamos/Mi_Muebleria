@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class Conexion {
     
     Connection con;
-    String url="jdbc:mysql://localhost:3306/usuario";
+    String url="jdbc:mysql://localhost:3306/Proyecto1";
     String usuario = "root2";
     String clave = "root12345";
     
