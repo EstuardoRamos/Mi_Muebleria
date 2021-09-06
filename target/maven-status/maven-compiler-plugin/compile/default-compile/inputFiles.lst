@@ -1,6 +1,7 @@
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/usuarios/ManejadorUsuario.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/area/finaciera/ManejadorAdmin.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/usuarios/BuscadorUsuarioServlet.java
+/home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/area/ventas/PuntoVenta.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/usuarios/Cliente.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/MuebleTipo.java
 /home/estuardo/NetBeansProjects/Mi_Muebleria/src/main/java/fabricaj/MuebleFr.java

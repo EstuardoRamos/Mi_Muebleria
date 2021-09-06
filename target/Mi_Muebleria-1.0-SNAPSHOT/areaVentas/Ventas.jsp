@@ -30,12 +30,12 @@
                 <div class="card">
                     <h5 class="card-header">Datos cliente</h5>
                     <div class="card-body">
-                        <form method="post" action="/ManejadorVentas?menu=Ventas">
+                        <form method="post" action="ManejadorVentas?menu=Ventas">
                             <div class="row">
                                 <div class="col-md-5 d-flex">
                                     <label>NIT:</label>
                                     <input type="text" name="nit" class="form-control" placeholder="nit" value="${cliente.getNIT()}">
-                                    <input type="submit" name="accion" value="BuscarCliente" class="btn btn-outline-dark">
+                                    <input type="submit"  name="accion" value="BuscarCliente" class="btn btn-outline-dark">
                                 </div>
                                 <div class="col-md-7 d-flex">
                                     <label>Nombre cliente:</label>
@@ -65,17 +65,17 @@
                 <div class="card">
                     <h5 class="card-header">Datos producto</h5>
                     <div class="card-body">
-                        <form action="Controlador?menu=Ventas" method="post">
+                        <form action="ManejadorVentas?menu=Ventas" method="post">
                             <div class="row">
                                 <div class="col-md-4 d-flex form-group">
-                                    <input type="number" name="codigoproducto" class="form-control" placeholder="Codigo Producto" value="${productoseleccionado.getCodigo()}">
+                                    <input type="number" name="codigoproducto" class="form-control" placeholder="Codigo Producto" value="${productoseleccionado.getId()}">
                                     <input type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-dark">
                                 </div>
                                 <div class="col-md-8 d-flex form-group">
-                                    <input type="text" name="nombreproducto" class="form-control" placeholder="Nombre Producto" value="${productoseleccionado.getNombreProducto()}">
+                                    <input type="text" name="nombreproducto" class="form-control" placeholder="Nombre Producto" value="${productoseleccionado.getNombreMueble()}">
                                 </div>
                                 <div class="col-md-4 d-flex form-group">
-                                    <input type="text" name="precioproducto" class="form-control" placeholder="Q 0000.00" value="${productoseleccionado.getPrecio()}">
+                                    <input type="text" name="precioproducto" class="form-control" placeholder="Q 0000.00" value="${productoseleccionado.getPrecioVenta()}">
                                 </div>
                                 <div class="col-md-8 d-flex form-group">
                                     <input type="number" value="1" name="cantidadproducto" class="form-control" placeholder="Cantidad">

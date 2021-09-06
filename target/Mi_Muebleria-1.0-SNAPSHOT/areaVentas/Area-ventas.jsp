@@ -24,7 +24,7 @@
                         <a class="nav-link">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ManejadorVentas?menu=Ventas" target="miContenedor">Vender</a>
+                        <a class="nav-link" href="ManejadorVentas?menu=Ventas&accion=empezar" target="miContenedor">Vender</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Controlador?menu=Empleados&accion=Listar" target="miContenedor">Devolucion</a>
