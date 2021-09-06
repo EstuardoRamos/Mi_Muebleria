@@ -167,15 +167,14 @@ public class ManejadorAdmin extends HttpServlet {
                     piezaEnsamble.setNombrePieza(nombrePie);
                     piezaEnsamble.setCantidad(cant);
                     ensamblePiezas.Agregar(piezaEnsamble);
-                    adminMuebles.agregar(mueble);
                     request.getRequestDispatcher(get).forward(request, response);
 
                     break;
 
                 case "Listar":
-                    List lista = adminMuebles.Listar();
+                    List lista = ensamblePiezas.Listar();
                     //List lista = ManejadorPieza.Listar();
-                    request.setAttribute("muebles", lista);
+                    request.setAttribute("piezasEnsamble", lista);
                     break;
 
                 case "Actualizar":
@@ -196,17 +195,18 @@ public class ManejadorAdmin extends HttpServlet {
 
                     //idPieza = Integer.parseInt(request.getParameter("id"));
                     //Pieza pieza = manejadorPieza.ListarPorId(idPieza);
-                    String name = request.getParameter("nombre");
-                    Mueble mueble = adminMuebles.ListarPorName(name);
-                    request.setAttribute("muebleSeleccionado", mueble);
+                    String nameM = request.getParameter("nombrem");
+                    String nameP = request.getParameter("nombrep");
+                    PiezaEnsamble piezaE  = ensamblePiezas.ListarPorName(nameM);
+                    request.setAttribute("ensamblePieza", piezaE);
                     request.getRequestDispatcher(get).forward(request, response);
 
                     break;
 
                 case "Eliminar":
-                    name = request.getParameter("nombre");
-                    System.out.println(name+" este nombre se borra");
-                    adminMuebles.Eliminar(name);
+                    nameM = request.getParameter("nombrem");
+                    nameP = request.getParameter("nombrep");
+                    ensamblePiezas.Eliminar(nameM,nameP);
                     request.getRequestDispatcher(get).forward(request, response);
                     break;
 

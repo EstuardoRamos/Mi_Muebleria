@@ -58,15 +58,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="piezasEnsamble" items="${piezaEnsamble}">
+                        <c:forEach var="piezasEnsamble" items="${piezasEnsamble}">
 
                             <tr>
-                                <th scope="row">${piezaEnsamble.getNombreMueble()}</th>
-                                <th scope="row">${piezaEnsamble.getNombrePieza()}</th>
-                                <td>${piezaEnsamble.getCantidad()}</td>
+                                <th scope="row">${piezasEnsamble.getNombreMueble()}</th>
+                                <th scope="row">${piezasEnsamble.getNombrePieza()}</th>
+                                <td>${piezasEnsamble.getCantidad()}</td>
                                 <td>
-                                    <a class="btn btn-warning" href="ManejadorAdmin?menu=Muebles&accion=Cargar&nombre=${piezaEnsamble.getNombreMueble()}">Editar</a>
-                                    <a class="btn btn-danger"  href="ManejadorAdmin?menu=Muebles&accion=Eliminar&nombre=${piezaEnsamble.getNombreMueble()}">Eliminar</a>
+                                    <a class="btn btn-warning" href="ManejadorAdmin?menu=piezasEnsambles&accion=Cargar&nombre=${piezaEnsamble.getNombreMueble()}">Editar</a>
+                                    <a class="btn btn-danger"  href="ManejadorAdmin?menu=piezasEnsamble&accion=Eliminar&nombrem=${piezaEnsamble.getNombreMueble()}&nombrep=${piezaEnsamble.getNombrePieza()}">Eliminar</a>
                                 </td>
 
                             </tr>

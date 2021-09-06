@@ -30,10 +30,13 @@
                         <a class="nav-link" href="ManejadorFabrica?menuFabrica=Ensamble&accion=ListarP" target="miContenedor">Ensamblar muebles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Controlador?menu=Clientes" target="miContenedor">Informacion piezas</a>
+                        <a class="nav-link" href="ManejadorFabrica" target="miContenedor">Informacion piezas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Controlador?menu=Ventas&accion=default" target="miContenedor">Informacion de los muebles</a>
+                        <a class="nav-link" href="ManejadorFabrica" target="miContenedor">Informacion de los muebles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login-Inicio.jsp">Cerrar sesion</a>
                     </li>
                 </ul>
                 <div class="btn-group">

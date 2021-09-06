@@ -27,13 +27,16 @@
                         <a class="nav-link" href="ManejadorVentas?menu=Ventas&accion=empezar" target="miContenedor">Vender</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Controlador?menu=Empleados&accion=Listar" target="miContenedor">Devolucion</a>
+                        <a class="nav-link" href="" target="miContenedor">Devolucion</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Controlador?menu=Clientes" target="miContenedor">Informacion muebles</a>
+                        <a class="nav-link" href="" target="miContenedor">Informacion muebles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Controlador?menu=Ventas&accion=default" target="miContenedor">Consultas</a>
+                        <a class="nav-link" href="" target="miContenedor">Consultas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login-Inicio.jsp">Cerrar sesion</a>
                     </li>
                 </ul>
                 <div class="btn-group">

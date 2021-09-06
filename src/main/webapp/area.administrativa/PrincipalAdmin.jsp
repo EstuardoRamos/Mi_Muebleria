@@ -33,10 +33,13 @@
                         <a class="nav-link" href="ManejadorAdmin?menu=Empleados&accion=Listar" target="miContenedor">Usuarios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Controlador?menu=Clientes" target="miContenedor">Reportes</a>
+                        <a class="nav-link" href="" target="miContenedor">Reportes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Controlador?menu=Ventas&accion=default" target="miContenedor">Consultas</a>
+                        <a class="nav-link" href="" target="miContenedor">Consultas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login-Inicio.jsp">Cerrar sesion</a>
                     </li>
                 </ul>
                 <div class="btn-group">
